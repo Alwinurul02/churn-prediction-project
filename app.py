@@ -120,10 +120,10 @@ with st.sidebar:
     st.markdown("### 🛒 Churn Predictor")
     st.caption("E-Commerce · SEA Market · n=4,000")
     page = st.radio("", [
-        "Overview",
-        "Predict customer",
-        "Model performance",
-        "Revenue at risk"
+        "📊 Overview",
+        "🔍 Predict customer",
+        "📈 Model performance",
+        "💰 Revenue at risk"
     ], label_visibility="collapsed")
     st.markdown("---")
     st.caption(f"Model: XGBoost · AUC {results['XGBoost']['auc']:.4f}")
@@ -132,7 +132,7 @@ with st.sidebar:
 # ════════════════════════════════════════════════════
 # PAGE 1 — OVERVIEW
 # ════════════════════════════════════════════════════
-if page == "Overview":
+if page == "📊 Overview":
     st.markdown("## Customer Churn & Revenue Risk Report")
     st.caption("E-Commerce · SEA Market · Snapshot 2024-12-31 · n=4,000 customers")
     st.divider()
@@ -223,7 +223,7 @@ if page == "Overview":
 # ════════════════════════════════════════════════════
 # PAGE 2 — PREDICT CUSTOMER
 # ════════════════════════════════════════════════════
-elif page == "Predict customer":
+elif page == "🔍 Predict customer":
     st.markdown("## Predict churn risk for a customer")
     st.caption("Enter customer details to get churn probability and revenue at risk.")
     st.divider()
@@ -320,7 +320,7 @@ elif page == "Predict customer":
 # ════════════════════════════════════════════════════
 # PAGE 3 — MODEL PERFORMANCE
 # ════════════════════════════════════════════════════
-elif page == "Model performance":
+elif page == "📈 Model performance":
     st.markdown("## Model performance")
     st.caption("Comparison of all 3 trained models — AUC, F1, Precision, Recall")
     st.divider()
@@ -329,10 +329,10 @@ elif page == "Model performance":
     df_res = pd.DataFrame({
         'Model':             list(results.keys()),
         'AUC-ROC':           [results[m]['auc'] for m in results],
-        'Avg precision':     [results[m]['avg_precision'] for m in results],
-        'Precision (churn)': [results[m]['precision_churn'] for m in results],
-        'Recall (churn)':    [results[m]['recall_churn'] for m in results],
-        'F1 (churn)':        [results[m]['f1_churn'] for m in results],
+        'Avg precision':     [results[m]['ap'] for m in results],
+        'Precision (churn)': [results[m]['precision'] for m in results],
+        'Recall (churn)':    [results[m]['recall'] for m in results],
+        'F1 (churn)':        [results[m]['f1'] for m in results],
     })
     st.dataframe(df_res, use_container_width=True, hide_index=True)
 
@@ -342,7 +342,7 @@ elif page == "Model performance":
         fig, ax = plt.subplots(figsize=(5.5, 3.2))
         model_names = ['XGBoost', 'Random Forest', 'Logistic Regression']
         auc_vals = [results[m]['auc'] for m in model_names]
-        f1_vals  = [results[m]['f1_churn'] for m in model_names]
+        f1_vals  = [results[m]['f1'] for m in model_names]
         y_pos    = np.arange(len(model_names))
         ax.barh(y_pos - 0.18, auc_vals, height=0.3, color=IBCS_FILLED,
                 edgecolor=IBCS_EDGE, label='AUC-ROC')
@@ -400,7 +400,7 @@ elif page == "Model performance":
 # ════════════════════════════════════════════════════
 # PAGE 4 — REVENUE AT RISK
 # ════════════════════════════════════════════════════
-elif page == "Revenue at risk":
+elif page == "💰 Revenue at risk":
     st.markdown("## Revenue at risk analysis")
     st.caption("Quantifying the business impact of predicted churn · test cohort n=800")
     st.divider()
