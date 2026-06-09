@@ -1,0 +1,11 @@
+feature,mean_abs_shap
+recency,7.1246276
+customer_lifespan_days,0.5923428
+segment_enc,0.0925033
+n_categories,0.023620663
+purchase_frequency_rate,0.019099945
+log_monetary,0.017687846
+log_frequency,0.017598115
+log_avg_order,0.014233343
+country_enc,0.012505616
+total_quantity,0.0032185048
