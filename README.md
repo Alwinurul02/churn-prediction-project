@@ -8,18 +8,18 @@
 
 **Live demo → [churn-prediction-project.streamlit.app](https://churn-prediction-project-wtvyys5jhgmeqpdwzr4aqg.streamlit.app)**
 
-End-to-end ML system that predicts which e-commerce customers are likely to churn in the next 90 days and quantifies the revenue at risk — enabling data-driven retention campaigns.
+End to end ML system that predicts which e-commerce customers are likely to churn in the next 90 days and quantifies the revenue at risk, enabling data driven retention campaigns.
 
 ---
 
 ## I. Strategic business insights
 
-By mapping ML inferences directly to financial metrics, the system uncovers high-leverage operational insights:
+By mapping ML inferences directly to financial metrics, the system uncovers high leverage operational insights:
 
-- **Segment differential:** Budget customers churn at **39.2%** vs Regular **21.7%** (1.8× gap). Price-led win-back campaigns should target the Budget tier only — not the entire base.
-- **Revenue at risk:** The model isolates a high-risk cohort representing **Rp 143.6M** in absolute revenue at risk, giving the finance team an exact budget justification for retention spend.
-- **Revenue gap:** Active customers average **Rp 9.80M** revenue vs **Rp 7.03M** for churned profiles — a **−Rp 2.77M (−28.3%)** variance per lost account, proving retention ROI exceeds acquisition cost.
-- **Recency threshold:** Customers inactive for **>90 days** churn with 100% precision — this is the operational trigger date for all retention actions.
+- **Segment differential:** Budget customers churn at **39.2%** vs Regular **21.7%** (1.8× gap). Price led win back campaigns should target the Budget tier only not the entire base.
+- **Revenue at risk:** The model isolates a high risk cohort representing **Rp 143.6M** in absolute revenue at risk, giving the finance team an exact budget justification for retention spend.
+- **Revenue gap:** Active customers average **Rp 9.80M** revenue vs **Rp 7.03M** for churned profiles, a **−Rp 2.77M (−28.3%)** variance per lost account, proving retention ROI exceeds acquisition cost.
+- **Recency threshold:** Customers inactive for **>90 days** churn with 100% precision. This is the operational trigger date for all retention actions.
 
 ---
 
@@ -64,7 +64,7 @@ Streamlit app + Streamlit Cloud deployment
 | Random Forest | 1.000 | 1.000 | Strong but less explainable |
 | **XGBoost ✓** | **1.000** | **1.000** | Selected — SHAP compatible |
 
-> **Why XGBoost over Random Forest?** Both achieve AUC 1.000. XGBoost is selected because SHAP's TreeExplainer provides per-customer attribution — critical for business stakeholders who need to act on individual predictions, not just model averages.
+> **Why XGBoost over Random Forest?** Both achieve AUC 1.000. XGBoost is selected because SHAP's TreeExplainer provides per-customer attribution, critical for business stakeholders who need to act on individual predictions, not just model averages.
 
 ---
 
