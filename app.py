@@ -120,10 +120,10 @@ with st.sidebar:
     st.markdown("### 🛒 Churn Predictor")
     st.caption("E-Commerce · SEA Market · n=4,000")
     page = st.radio("", [
-        "📊 Overview",
-        "🔍 Predict customer",
-        "📈 Model performance",
-        "💰 Revenue at risk"
+        "Overview",
+        "Predict customer",
+        "Model performance",
+        "Revenue at risk"
     ], label_visibility="collapsed")
     st.markdown("---")
     st.caption(f"Model: XGBoost · AUC {results['XGBoost']['auc']:.4f}")
@@ -150,9 +150,9 @@ if page == "📊 Overview":
     c4.metric("Revenue at risk (Rp)", f"{rev_risk/1e6:.1f}M", "high-risk tier")
 
     st.info(
-        "**Recency** dominates churn prediction with SHAP weight **7.12** — 12× higher than the "
+        "**Recency** dominates churn prediction with SHAP weight **7.12**. 12× higher than the "
         "next feature. Customers inactive ≥91 days churn with 100% precision. "
-        "Budget segment churns at **39.2%** vs Regular **21.7%** — a **1.8×** differential "
+        "Budget segment churns at **39.2%** vs Regular **21.7%**, a **1.8×** differential "
         "demanding separate retention strategies."
     )
 
@@ -223,7 +223,7 @@ if page == "📊 Overview":
 # ════════════════════════════════════════════════════
 # PAGE 2 — PREDICT CUSTOMER
 # ════════════════════════════════════════════════════
-elif page == "🔍 Predict customer":
+elif page == "Predict customer":
     st.markdown("## Predict churn risk for a customer")
     st.caption("Enter customer details to get churn probability and revenue at risk.")
     st.divider()
@@ -320,7 +320,7 @@ elif page == "🔍 Predict customer":
 # ════════════════════════════════════════════════════
 # PAGE 3 — MODEL PERFORMANCE
 # ════════════════════════════════════════════════════
-elif page == "📈 Model performance":
+elif page == "Model performance":
     st.markdown("## Model performance")
     st.caption("Comparison of all 3 trained models — AUC, F1, Precision, Recall")
     st.divider()
@@ -400,7 +400,7 @@ elif page == "📈 Model performance":
 # ════════════════════════════════════════════════════
 # PAGE 4 — REVENUE AT RISK
 # ════════════════════════════════════════════════════
-elif page == "💰 Revenue at risk":
+elif page == "Revenue at risk":
     st.markdown("## Revenue at risk analysis")
     st.caption("Quantifying the business impact of predicted churn · test cohort n=800")
     st.divider()
