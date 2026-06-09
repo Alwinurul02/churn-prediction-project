@@ -119,7 +119,7 @@ def ibcs_shap_bar(ax, features, values, title=''):
 with st.sidebar:
     st.markdown("### 🛒 Churn Predictor")
     st.caption("E-Commerce · SEA Market · n=4,000")
-    page = st.radio("", [
+    page = st.radio("Navigation", [
         "Overview",
         "Predict customer",
         "Model performance",
@@ -132,7 +132,7 @@ with st.sidebar:
 # ════════════════════════════════════════════════════
 # PAGE 1 — OVERVIEW
 # ════════════════════════════════════════════════════
-if page == "📊 Overview":
+if page == "Overview":
     st.markdown("## Customer Churn & Revenue Risk Report")
     st.caption("E-Commerce · SEA Market · Snapshot 2024-12-31 · n=4,000 customers")
     st.divider()
