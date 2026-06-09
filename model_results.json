@@ -2,25 +2,25 @@
   "Logistic Regression": {
     "auc": 0.998,
     "ap": 0.9947,
-    "f1_churn": 0.9511,
-    "precision_churn": 0.9145,
-    "recall_churn": 0.9907,
+    "f1": 0.9511,
+    "precision": 0.9145,
+    "recall": 0.9907,
     "avg_precision": 0.9947
   },
   "Random Forest": {
     "auc": 1.0,
     "ap": 1.0,
-    "f1_churn": 1.0,
-    "precision_churn": 1.0,
-    "recall_churn": 1.0,
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
     "avg_precision": 1.0
   },
   "XGBoost": {
     "auc": 1.0,
     "ap": 1.0,
-    "f1_churn": 1.0,
-    "precision_churn": 1.0,
-    "recall_churn": 1.0,
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
     "avg_precision": 1.0
   }
 }
